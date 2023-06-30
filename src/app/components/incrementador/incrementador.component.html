@@ -10,8 +10,10 @@
     </span>
     <input 
       type="number" 
-      class="form-control" 
+      class="form-control"
+      [ngClass]="{'is-invalid': progreso > 100 || progreso < 0}"
       placeholder="Product name"
+      (ngModelChange)="onChange($event)"
       [(ngModel)]="progreso" 
     />
     <span class="input-group-btn">
